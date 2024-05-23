@@ -1,14 +1,29 @@
 import React from "react";
 import BoxContainer from "./components/BoxContainer";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 function App() {
   // Box 를 클릭하면 해당 Box만 파란색이 되도록 해야 합니다. components/ 안의 컴포넌트들안에서 TODO를 확인하세요.
   // TODO: GlobalStyle 컴포넌트를 만들고 styled-reset 패키지로 스타일 초기화하고 App 컴포넌트에 적용해 보세요.
+
+  const GlobalStyle = createGlobalStyle`
+${reset}
+/* 추가적인 전역 스타일을 여기에 작성할 수 있습니다 */
+/* body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+} */
+`;
+
   return (
-    <div>
-      <h1>Clickable Boxes</h1>
-      <BoxContainer />
-    </div>
+    <>
+      <GlobalStyle />
+      <div>
+        <h1>Clickable Boxes</h1>
+        <BoxContainer />
+      </div>
+    </>
   );
 }
 
